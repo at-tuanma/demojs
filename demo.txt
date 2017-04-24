@@ -1,6 +1,317 @@
-aknsakd nklasdm klasdm klasm dkaslm kd
-ad maskdlmsakld m
-asd mkasdm kalsmkl
-
-
-dsadsadasdas
+{
+	status: "true",
+	user_status: "login",
+	api_number: "M09E",
+	browser_url: "https://weawow.com/option/setting",
+	title: "Setting",
+	menu: {
+		wow_city: {
+			title: "Wow Cities",
+			next: {
+				api_number: "M09B",
+				screen_num: "M09B",
+				function_name: "Screen wow City Setting",
+				api_url: "http://localhost/v1/en/option/wowcity"
+			}
+		},
+		wow_photos: {
+			title: "Wow Photos",
+			next: {
+				api_number: "M09D",
+				screen_num: "M09D",
+				function_name: "Screen user own wow Photos",
+				api_url: "http://localhost/v1/en/option/postwow"
+			}
+		},
+		edit_profile: {
+			title: "Edit Profile",
+			next: {
+				api_number: "M09C",
+				screen_num: "M09C",
+				function_name: "Screen Edit Profile",
+				api_url: "http://localhost/v1/en/option/editprofile"
+			}
+		},
+		gps: {
+			title: "GPS"
+		},
+		push_notifications: {
+			title: "Push Notifications",
+			user_value: "1",
+			input: [
+				{
+					display: "on",
+					key: "push_notification",
+					value: "1"
+				},
+				{
+					display: "off",
+					key: "push_notification",
+					value: "0"
+				}
+			],
+			next: {
+				api_number: "A23",
+				screen_num: "-",
+				function_name: "Send Setting",
+				api_url: "http://localhost/v1/en/option/setting/send?push_notification="
+			}
+		},
+		news_letter: {
+			title: "weawow e-Newsletter",
+			user_value: "1",
+			input: [
+				{
+					display: "on",
+					key: "email_notification_news",
+					value: "1"
+				},
+				{
+					display: "off",
+					key: "email_notification_news",
+					value: "0"
+				}
+			],
+			next: {
+				api_number: "A23",
+				screen_num: "-",
+				function_name: "Send Setting",
+				api_url: "http://localhost/v1/en/option/setting/send?email_notification_news="
+			}
+		},
+		temperature_setting: {
+			title: "Temperature",
+			user_value: "Celsius",
+			input: [
+				{
+					display: "°C",
+					key: "temperature_setting",
+					value: "Celsius"
+				},
+				{
+					display: "°F",
+					key: "temperature_setting",
+					value: "Fahrenheit"
+				}
+			],
+			next: {
+				api_number: "A23",
+				screen_num: "-",
+				function_name: "Send Setting",
+				api_url: "http://localhost/v1/en/option/setting/send?temperature_setting="
+			}
+		},
+		connect_service: {
+			title: "Connect to Service",
+			data: [
+				{
+					service_name: "Instagram",
+					user_value: "on",
+					input: [
+						{
+							display: "on"
+						},
+						{
+							display: "off"
+						}
+					],
+					next: {
+						api_number: "A20",
+						screen_num: "-",
+						function_name: "Send Stop Instagram",
+						api_url: "http://localhost/v1/en/option/editprofile/disInsta"
+					}
+				},
+				{
+					service_name: "Facebook",
+					user_value: "off",
+					input: [
+						{
+							display: "on"
+						},
+						{
+							display: "off"
+						}
+					],
+					next: {
+						api_number: "A13b",
+						screen_num: "-",
+						function_name: "Save Facebook account",
+						api_url: "http://localhost/v1/auth/save/facebook?locale=en&back=setting",
+						method: "GET",
+						add_parameter: {
+							token: "<< fb_token >>",
+							id: "<< fb_id >>",
+							name: "<< fb_name >>",
+							email: "<< fb_email >>",
+							avatar: "<< fb_avatar >>"
+						}
+					}
+				}
+			]
+		},
+		language: {
+			title: "Language",
+			user_value: "en",
+			input: [
+				{
+					display: "english",
+					key: "language",
+					value: "en"
+				},
+				{
+					display: "简体中文",
+					key: "language",
+					value: "cn"
+				},
+				{
+					display: "Português",
+					key: "language",
+					value: "pr"
+				},
+				{
+					display: "Español",
+					key: "language",
+					value: "es"
+				},
+				{
+					display: "日本語",
+					key: "language",
+					value: "jp"
+				},
+				{
+					display: "Pусский",
+					key: "language",
+					value: "ru"
+				},
+				{
+					display: "Deutsch",
+					key: "language",
+					value: "de"
+				},
+				{
+					display: "Français",
+					key: "language",
+					value: "fr"
+				},
+				{
+					display: "Tiếng việt",
+					key: "language",
+					value: "vn"
+				}
+			],
+			next: {
+				api_number: "A23",
+				screen_num: "-",
+				function_name: "Send Setting",
+				api_url: "http://localhost/v1/en/option/setting/send?language="
+			}
+		},
+		email: {
+			title: "Email",
+			user_value: null,
+			input: [
+				{
+					display: "Email",
+					key: "email",
+					value: ""
+				}
+			],
+			send_button_name: "Save Changes",
+			next: {
+				api_number: "A23",
+				screen_num: "-",
+				function_name: "Send Setting",
+				api_url: "http://localhost/v1/en/option/setting/send?email="
+			}
+		},
+		change_password: {
+			title: "Change Password",
+			user_value: "No old password",
+			input: [
+				{
+					display: "New Password",
+					key: "password",
+					value: ""
+				},
+				{
+					display: "Verify password",
+					key: "password_confirmation",
+					value: ""
+				}
+			],
+			send_button_name: "Save Changes",
+			next: {
+				api_number: "A26",
+				screen_num: "-",
+				function_name: "Post Password Change",
+				api_url: "http://localhost/v1/en/option/passwordchange/post"
+			}
+		},
+		information: [
+			{
+				title: "About us",
+				next: {
+					api_number: "i02",
+					screen_num: "i02",
+					function_name: "Screen About us",
+					api_url: "http://localhost/v1/en/i/aboutus"
+				}
+			},
+			{
+				title: "Privacy",
+				next: {
+					api_number: "i01",
+					screen_num: "i01",
+					function_name: "Screen Privacy",
+					api_url: "http://localhost/v1/en/i/privacy"
+				}
+			},
+			{
+				title: "Terms",
+				next: {
+					api_number: "i04",
+					screen_num: "i04",
+					function_name: "Screen Term",
+					api_url: "http://localhost/v1/en/i/terms"
+				}
+			},
+			{
+				title: "Cookies",
+				next: {
+					api_number: "i06",
+					screen_num: "i06",
+					function_name: "Screen Cookie",
+					api_url: "http://localhost/v1/en/i/cookie"
+				}
+			},
+			{
+				title: "Help",
+				next: {
+					api_number: "i05",
+					screen_num: "i05",
+					function_name: "Screen Help",
+					api_url: "http://localhost/v1/en/i/help"
+				}
+			},
+			{
+				title: "Contact",
+				next: {
+					api_number: "i03A",
+					screen_num: "i03A",
+					function_name: "Screen Contact Form",
+					api_url: "http://localhost/v1/en/i/contact"
+				}
+			}
+		],
+		logout: {
+			title: "Log out",
+			next: {
+				api_number: "A17",
+				screen_num: "-",
+				function_name: "Post Log out",
+				api_url: "http://localhost/v1/logout_en"
+			}
+		}
+	}
+}

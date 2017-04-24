@@ -5,10 +5,19 @@ var router = require("./router");
 function start() {
   function onRequest(request, response) {
     var pathname = url.parse(request.url).pathname;
-    router.route(pathname)
-    response.writeHead(200, {"Content-Type": "text/plain"});
-    response.write("Hello World");
-    response.end();
+
+    var ok = function(data) {
+      console.log(data);
+      console.log("tuan4912");
+      response.writeHead(200, {"Content-Type": "json/html"});
+      response.write(data);
+      response.end();
+    }
+
+  console.log(pathname);
+  var string = pathname.substring(1)
+  router.route(string,ok);
+
   }
 
   http.createServer(onRequest).listen(8888);

@@ -1,11 +1,12 @@
 var fs = require("fs");
 
-function readfileSync(fileName) {
+function readfileSync(fileName, callBack) {
 
   fs.readFile(fileName, function(err, data) {
     if (err) {
       return console.log(err);
     } else {
+      callBack(data);
       console.log(data.toString());
     }
   });
@@ -14,9 +15,10 @@ function readfileSync(fileName) {
 }
 
 function readfileNonSync(fileName) {
-  var data = readfileSync(fileName);
+  var data = fs.readfileSync(fileName);
   console.log(data.toString());
   console.log("xong");
 }
 
-exports.readfile = readfile;
+exports.readfileSync = readfileSync;
+exports.readfileNonSync = readfileNonSync;
